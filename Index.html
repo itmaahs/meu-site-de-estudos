@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meus Estudos de Inglês</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      background-color: #fdfcfb;
+      color: #444;
+    }
+
+    .menu-lateral {
+      width: 220px;
+      background-color: #ffeaea;
+      padding: 1.5rem;
+      height: 100vh;
+      position: fixed;
+      border-right: 2px solid #f7dada;
+    }
+
+    .menu-lateral h2 {
+      font-size: 20px;
+      color: #d87093;
+      margin-bottom: 1rem;
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-lateral li {
+      margin-bottom: 10px;
+    }
+
+    .menu-lateral button {
+      width: 100%;
+      background-color: #ffe1f0;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .menu-lateral button:hover {
+      background-color: #ffcde1;
+    }
+
+    main {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    main h1 {
+      color: #a78cc2;
+      margin-bottom: 2rem;
+    }
+
+    .livro {
+      display: none;
+    }
+
+    .livro.ativo {
+      display: block;
+      background-color: #eafdfc;
+      padding: 1.5rem;
+      border: 2px dashed #c7e7e4;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <aside class="menu-lateral">
+    <h2>📚 Meus Livros</h2>
+    <ul>
+      <li><button onclick="trocarLivro('outcomes')">Outcomes</button></li>
+      <li><button onclick="trocarLivro('american')">American English File</button></li>
+      <li><button onclick="trocarLivro('cutting')">Cutting Edge</button></li>
+      <li><button onclick="trocarLivro('empower')">Empower</button></li>
+    </ul>
+  </aside>
+
+  <main>
+    <h1>✨ Meus Estudos de Inglês ✨</h1>
+    <div id="area-livros">
+      <div id="outcomes" class="livro ativo">
+        <h2>📖 Outcomes</h2>
+        <p>(Unidades aparecerão aqui.)</p>
+      </div>
+      <div id="american" class="livro">
+        <h2>📖 American English File</h2>
+        <p>(Unidades aparecerão aqui.)</p>
+      </div>
+      <div id="cutting" class="livro">
+        <h2>📖 Cutting Edge</h2>
+        <p>(Unidades aparecerão aqui.)</p>
+      </div>
+      <div id="empower" class="livro">
+        <h2>📖 Empower</h2>
+        <p>(Unidades aparecerão aqui.)</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function trocarLivro(id) {
+      document.querySelectorAll('.livro').forEach(div => {
+        div.classList.remove('ativo');
+      });
+      document.getElementById(id).classList.add('ativo');
+    }
+  </script>
+</body>
+</html>
